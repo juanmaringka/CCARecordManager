@@ -1,0 +1,52 @@
+<!-- navbar -->
+<div class='navbar'>
+    <img src="static/images/nyjc.png" alt="nyjc logo" >
+    <div class="dropdown">
+        <button class="dropbtn"><a href='/'>Home</a>
+            <i class="fa fa-caret-down"></i>
+        </button>
+    </div>
+    
+    <div class="dropdown">
+        <button class="dropbtn"><a href='/add'>Add</a>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/add?choice=CCA">CCA</a>
+            <a href="/add?choice=Activity">Activity</a>
+        </div>
+    </div>
+    <div class='dropdown'>
+        <button class='dropbtn'><a href='/view'>View</a>
+            <i class='fa fa-caret-down'></i>
+        </button>
+        <div class='dropdown-content'>
+            <a href='/view?choice=Student'>Student</a>
+            <a href='/view?choice=Class'>Class</a>
+            <a href='/view?choice=CCA'>CCA</a>
+            <a href='/view?choice=Activity'>Activity</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><a href='/edit'>Edit</a>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/edit?choice=Add+CCA+Member">Add CCA Member</a>
+            <a href="/edit?choice=Add+Activity+Participant">Add Activity Participant</a>
+            <a href="/edit?choice=Edit+CCA+Member">Edit CCA Member</a>
+            <a href="/edit?choice=Edit+Activity+Participant">Edit Activity Participant</a>
+            <a href="/edit?choice=Remove+CCA+Member">Remove CCA Member</a>
+            <a href="/edit?choice=Remove+Activity+Participant">Remove Activity Participant</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class='dropbtn'><a href='/help'>Help</a>
+            <i class='fa fa-caret-down'></i>
+        </button>
+    </div>
+</div>
+
+<header class='main-heading'>  
+    <h1><span class='highlight-blue'>NY Hub: Student CCA Portal</span></h1>
+</header>

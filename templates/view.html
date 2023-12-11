@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Student CCA Portal - View</title>
+    {% include "head.html" %}
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class='container'>
+    <span class='highlight-purple'>{{title}}</span>
+        <br>
+    {% if page_type == 'new' %}
+    <form action='{{form_meta["action"]}}' method='{{form_meta["method"]}}'>
+    </br>
+        <select name='choice'>
+            {% for item in choices %}
+            <option value = "{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+    <br><br>
+        <input type='submit' value='Next'>
+    </form>       
+    {% endif %}
+
+    {% if page_type == 'search' %}
+        <br>
+    <table>
+    <form action='{{form_meta["action"]}}' method='{{form_meta["method"]}}'>
+        <tr>
+            <td><span class='highlight-pink'><label for='{{choice}}'>{{choice}}</label></span></td>
+            <td><input id={{choice}} type='text' name={{choice}} value=''></td>
+        </tr>
+   
+    </table>
+    {% if error %}
+    <span style='color: red'>Error: {{error}}</span>
+    {% endif %}
+    <br>
+    <input type='submit' value='Search'>  </form>
+    {% endif %}        
+
+    {% if page_type == 'result' %}
+            <br>
+        <table>
+        {% for key,value in data.items() %}
+        <tr>
+            <td><span class='highlight-pink'>{{table_header[key]}}</span></td>
+            <td><span class='highlight-blue'>{{value}}</span></td>
+        </tr>
+        {% endfor %}
+        </table>    
+    
+        {% if list_of_dicts %}
+            {% for type, info, list_header in list_of_dicts %}
+            <br>
+            {% if info != False %}
+            <span class='highlight-purple'>{{type}}</span>
+            <table>
+                <tr>
+                    {% for header in list_header %}
+                    <td><span class='highlight-pink'>{{header}}</span></td>
+                    {% endfor %}
+                </tr>
+                {% for item in info %}
+                <!-- info = [{'subj_name':'gp', 'subj_lvl': 'h1'}, {}] -->
+                <tr>
+                    {% for v in item.values() %}
+                        <td><span class='highlight-blue'>{{v}}</span></td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <span class='highlight-purple'>This student does not have any {{type}}.</span><br>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+    </div>
+</body>   
+</html>

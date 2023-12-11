@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Student CCA Portal - Home</title>
+    {% include "head.html" %}
+</head>
+<body>
+{% include 'header.html' %}
+    <div class='container custom-select'>
+        <span class='highlight-purple'>What would you like to do today?</span> 
+        <br><br>
+        <select name="forma" onchange="javascript: location.href = this.value;">
+        <option value="">Make a Selection</option>
+        <option value="/add">Add</option>
+        <option value="/view">View</option>
+        <option value="/edit">Edit</option>
+        <option value="/help">Help</option>
+    </select>
+    </div>
+</body>
+</html>

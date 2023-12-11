@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>Student CCA Portal - Edit</title>
+    {% include "head.html" %}
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class='container'>
+    <span class='highlight-purple'>{{title}}</span>
+        <br>
+    {% if page_type == 'new' %}
+    <form action='{{form_meta["action"]}}' method='{{form_meta["method"]}}'>
+        <br>
+        <select name='choice'>
+            {% for item in choices %}
+            <option value='{{item}}'>{{item}}</option>
+            {% endfor %}
+        </select>
+    <br><br>
+        <input type='submit' value='Next'>
+    </form>
+    {% endif %}
+
+    {% if page_type == 'search'%}
+    <br>
+    <table>
+        <form action='{{form_meta["action"]}}' method='{{form_meta["method"]}}'>
+            {% for key, value in form_data.items() %}
+            <tr>
+                <td><span class='highlight-pink'><label for='{{key}}'>{{key}}</span></td>
+                <td><input id='{{key}}' type='text' name='{{key}}' value='{{value}}'></td>
+            </tr>
+            {% endfor %}
+            <input type='hidden' name='action' value='{{action}}'>
+    </table> 
+    <br>
+    {% if error %}
+    <span style='color: red'>Error: {{error}}</span><br>
+    {% endif %}
+    {% if action != 'add' %}
+    <input type='submit' value='Search'>
+    {% else %}
+    <input type='submit' value='Confirm'>
+    {% endif %}
+    </form>
+    {% endif %}
+
+    {% if page_type == 'verify' %}
+        <br>
+    <table>
+        <form action='{{form_meta["action"]}}' method='{{form_meta["method"]}}'>
+            {% for key, value in form_data.items() %}
+            <tr>
+                <td><span class='highlight-pink'>{{key}}</span></td>
+                {% if action == 'edit' %}
+                {% if key in ['Role', 'Hours', 'Award'] %}
+                <td><input type='{{tdtype}}' name='{{key}}' value='{{value}}'></td>
+                {% else %}
+                <td><input type='hidden' name='{{key}}' value='{{value}}'><span class='highlight-blue'>{{value}}</span></td>
+                {% endif %}
+                {% endif %}
+                {% if action in ['add', 'remove'] %}
+                <td><input type='{{tdtype}}' name='{{key}}' value='{{value}}'><span class='highlight-blue'>{{value}}</span></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+    </table> 
+        <input type='hidden' name='action' value='{{action}}'>
+    <br>
+    <input type='submit' value='Yes'>  
+    <input type="button" value="No" onclick="history.back()">
+    {% endif %} 
+
+    {% if page_type == 'success' %}
+        <br>
+    {% for key, value in form_data.items() %}
+    <table>
+        <tr>
+            <td><span class='highlight-pink'>{{key}}</span></td>
+            <td><span class='highlight-pink'>{{value}}</span></td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% endif %}
+    </div>
+</body>
+</html>

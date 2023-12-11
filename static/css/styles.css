@@ -1,0 +1,254 @@
+body{
+    font-family: Verdana, Arial, Helvetica;
+}
+
+.highlight-red {
+    font-weight: bold;
+    color: red;
+}			
+
+.highlight-blue {
+    font-weight: bold;
+    color: lightblue;
+}			
+
+.highlight-white {
+    font-weight: bold;
+    color: white
+}
+
+.highlight-pink {
+    font-weight: bold;
+    color: lightpink
+}
+
+.highlight-purple {
+    font-weight: bold;
+    color: #c19ad0
+}
+
+
+.instruction {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.main-heading, .container, .footer {
+    width: 500px;
+    /* margin value of auto places the content in the center */
+    padding: 5px;
+    margin: auto;
+    color: lightblue
+}
+
+.container {
+    display: table;
+    border: 0.5px solid #a3b9c2;
+}
+
+.ralign {
+    /*display: flex; 
+    justify-content: flex-end;*/
+    float:right;
+}
+        
+img {
+    float: left;
+    height: 60px;
+    padding: 7px;
+}
+
+table td { 
+    width: 10em; 
+    border: 0.5px solid #ffffff;
+    font-weight: bold;
+}
+
+html {background-color: #242729}
+
+table td { 
+    width: 10em; 
+    border: 0.5px solid #91c0ca;
+    font-weight: bold;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.row div {
+  width: 50%;
+}
+
+.noMargin {
+  margin: 0px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #161618;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+} 
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #3d3d6b;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+select {
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding: 5px;
+    font-size: 14px;
+    color: #555;
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    border: 1px solid rgb(41, 18, 18);
+}
+select>option{
+    font-size: 14px;
+    color: #555;
+    background-color: rgb(247, 247, 247);
+    height: 50px;
+    padding: 15px;
+    border: 1px solid rgb(41, 18, 18);
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+
+/* The container must be positioned relative: */
+/* .custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+/* .select-selected {
+  background-color: DodgerBlue;
+}
+ */ 
+/* Style the arrow inside the select element: */
+/* .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+ */
+/* Point the arrow upwards when the select box is open (active): */
+/* .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+ */
+/* style the items (options), including the selected item: */
+/* .select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+} */
+
+/* Style items (options): */
+/* .select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+} */
+
+/* Hide the items when the select box is closed: */
+/* .select-hide {
+  display: none;
+}
+ */
+/* .select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
